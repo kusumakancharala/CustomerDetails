@@ -1,18 +1,23 @@
 package com.Bank.CustomerDetails.entities;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
+
 import javax.persistence.*;
 import java.security.PrivateKey;
 
 @Entity
 @Table(name="Bank")
+@JsonRootName("Customer Details")
 public class Bank {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long  Customerid;
-
     private String Customername;
     private String Customerdetails;
     private String Customermobilenumber;
+
+
+
 
     public Long getCustomerid() {
         return Customerid;

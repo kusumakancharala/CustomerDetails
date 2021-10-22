@@ -1,0 +1,8 @@
+error:
+  simplerrors:
+    - httpCode: 500
+      message: not valid id
+      action: try with another id
+    - httpCode: 800
+      message: id is not present
+      action: please provide id
