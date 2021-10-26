@@ -6,10 +6,8 @@ import org.json.simple.*;
 import org.json.simple.parser.*;
 public class ReadJsonFile {
     public static void main(String args[]) {
-        //Creating a JSONParser object
         JSONParser jsonParser = new JSONParser();
         try {
-            //Parsing the contents of the JSON file
             JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\kusumak\\Desktop\\NewCustomer\\customerdetails\\output.json"));
             String id = (String) jsonObject.get("ID");
             String first_name = (String) jsonObject.get("First_Name");
