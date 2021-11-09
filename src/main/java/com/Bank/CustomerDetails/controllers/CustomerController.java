@@ -8,6 +8,8 @@ import com.Bank.CustomerDetails.repos.BankCustomer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import org.hibernate.boot.spi.MetadataBuildingContext;
+import org.hibernate.mapping.RootClass;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -79,7 +81,7 @@ public class CustomerController {
 
             List<Bank> list = (List<Bank>) bankCustomer.findAll();
 
-            RootClass collection = new RootClass(list);
+            RootClass collection = new RootClass((MetadataBuildingContext) list);
             return collection;
         }
 //        public List<Bank> findallsorting() {
